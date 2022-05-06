@@ -4,48 +4,45 @@
 void dec2bin(int num)
 {
 	int copy = num, digits_count = 0, actual_bin=0;
+	printf("The binary value for %d is: ",num); //print the value of input before it is changed
 
 /*
 *To determine how many digits are there in the converted result, we do this:*
 *For example, 6 is 101 includes 3 binary digits. Therefore, it must be divided by 2 for 3 times*
 */
-	while(copy>0) 
+	while(copy>0)
 	{
 		copy /= 2;
-		digits_count++;	
+		digits_count++;
 	}
 /*
 *Since we want to display binary result as set of 4 digits*
 *We have to add 0 digits to the blank position*
 */
-	int lacking_zeros = 4 - digits_count % 4; 
+	int lacking_zeros = 4 - digits_count % 4;
 	digits_count += lacking_zeros; // i.e 101 to 0101
 
-	int *pbin = malloc (digits_count * sizeof(int)); //FOR METHOD 1 ONLY
+	int *pbin = malloc (digits_count * sizeof(int));
 	for (int i = 0; i < digits_count ; i++)
 	{
-		pbin[i] = num%2; //FOR METHOD 1 ONLY
-		actual_bin = 10*actual_bin + pbin[i]; //FOR METHOD 2 ONLY
-		num /= 2;	
+		pbin[i] = num%2;
+		num /= 2;
 	}
-/*METHOD 1: STORES VALUES DIRECTLY INTO AN ARRAY*/
 	for(int j=digits_count-1;j>=0;j--)
 	{
 	    printf("%d",pbin[j]);
 	}
-/*METHOD 2: STORES VALUES AS AN INTEGER (the result is reversed, need processing more later)*/
-	printf("\n");
-	printf("%d",actual_bin);
 }
 
 
 void dec2hex(int num)
 {
 	int copy = num, digits_count = 0, actual_bin=0;
-	while(copy>0) 
+	printf("The hexadecimal value for %d is: ",num); //print the value of input before it is changed
+	while(copy>0)
 	{
 		copy /= 16;
-		digits_count++;	
+		digits_count++;
 	}
 	char *pbin = malloc (digits_count * sizeof(int));
 	for (int i = 0; i < digits_count ; i++)
@@ -54,10 +51,20 @@ void dec2hex(int num)
 		    pbin[i] = num%16 + 48;
 		else
 		    pbin[i] = num%16 + 55;
-		num /= 16;	
+		num /= 16;
 	}
 	for(int j=digits_count-1;j>=0;j--)
 	{
 	    printf("%c",pbin[j]);
 	}
 }
+
+/*
+int main()
+{
+	dec2bin(69);
+	printf("\n");
+	dec2hex(69);
+	return 1;
+}
+*/
