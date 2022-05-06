@@ -48,12 +48,13 @@ int findNum(int *Arr, int Arrnum, int requiredNum)
 		}	
 	}
 	if(occurances>0)
-	    printf("The number %d showed at the position of: ", requiredNum);
-        for (int i=0;i<occurances;i++)
-        {
-                printf("%d ",p[i]);
-        }
-        printf("\n");
+	{
+		printf("The number %d showed at the position of: ", requiredNum);
+		for (int i=0;i<occurances;i++)
+		{
+			printf("%d ",p[i]);
+		}
+		printf("\n");
 	}
 	free(p);
 	return occurances;
