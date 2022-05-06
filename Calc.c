@@ -44,8 +44,8 @@ int findNum(int *Arr, int Arrnum, int requiredNum)
 		if (Arr[pos] == requiredNum)
 		{
 			p[occurances] = pos;
-			occurances++;	
-		}	
+			occurances++;
+		}
 	}
 	if(occurances>0)
 	{
@@ -62,26 +62,25 @@ int findNum(int *Arr, int Arrnum, int requiredNum)
 
 /*
 int main()
-
 {
-/*Initializations*/
+//Initializations
     int Arr[] = {2,-2,1,1,5,3};
     int Arrnum = sizeof(Arr)/sizeof(Arr[0]);
-    
-/* sum function test, expected output: 10 */ 
+
+//sum function test, expected output: 10
     printf("The sum of the array is: %d \n",sum(Arr,Arrnum));
-    
-/* max function test, expected output: 5 */
+
+//max function test, expected output: 5
     printf("The maximum value of the array is: %d \n",max(Arr,Arrnum));
-    
-/* min function test, expected output: -2 */
-    printf("The minimum value of the array is: %d \n",min(Arr,Arrnum)); 
-    
-/* findNum function test, expected output for number 1: 2 times */
+
+//min function test, expected output: -2
+    printf("The minimum value of the array is: %d \n",min(Arr,Arrnum));
+
+//findNum function test, expected output for number 1: 2 times
     int requiredNum = 1;
     printf("The number %d shows up %d times",requiredNum,findNum(Arr,Arrnum,requiredNum));
 
-/* The End */
+//The End
     return 0;
 }
 */
