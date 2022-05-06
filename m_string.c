@@ -7,7 +7,9 @@ int CompareArr(int *Arr1,int *Arr2, int numArr)
 	for(int i=0;i<numArr;i++)
 	{
 		if(Arr1[i] != Arr2[i])
+		{
 			return 0;
+		}
 	}
 	return 1;
 }
@@ -38,8 +40,12 @@ int main()
 	int Arr1[] = {2,-2,1,1,5,3};
 	int Arr2[] = {2,-2,1,1,5,3};
 	int N = sizeof(Arr1)/sizeof(Arr1[0]);
-	printf("%d",CompareArr(Arr1, Arr2, N));
+	if(CompareArr(Arr1, Arr2, N) == 0)
+		printf("The two array is not equal");
+	else if(CompareArr(Arr1, Arr2, N) == 1)
+		printf("The two array is equal");
 	printf("\n");
+	printf("The inserted array is: ");
 	InsertArr(Arr1, N, 8, 3);
 }
 */
