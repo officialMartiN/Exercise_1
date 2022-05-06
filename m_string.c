@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "m_string.h"
 
 int CompareArr(int *Arr1,int *Arr2, int numArr)
 {
@@ -19,7 +20,7 @@ void InsertArr(int *Arr, int numArr, int insertNum, int insertPos)
 	{
 		newArr[i] = Arr[i-1];
 	}
-	
+
 	for (int i=0;i<insertPos;i++)
 	{
 		newArr[i]= Arr[i];
@@ -30,3 +31,15 @@ void InsertArr(int *Arr, int numArr, int insertNum, int insertPos)
 		printf("%d ",newArr[i]);
 	}
 }
+
+/*
+int main()
+{
+	int Arr1[] = {2,-2,1,1,5,3};
+	int Arr2[] = {2,-2,1,1,5,3};
+	int N = sizeof(Arr1)/sizeof(Arr1[0]);
+	printf("%d",CompareArr(Arr1, Arr2, N));
+	printf("\n");
+	InsertArr(Arr1, N, 8, 3);
+}
+*/
