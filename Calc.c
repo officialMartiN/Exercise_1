@@ -39,24 +39,23 @@ int findNum(int *Arr, int Arrnum, int requiredNum)
 {
 	int occurances=0;
 	int *p= malloc(Arrnum*sizeof(int));
-	for(int i=0;i<Arrnum;i++)
+	for(int pos=0;pos<Arrnum;pos++)
 	{
-		if (Arr[i] == requiredNum)
+		if (Arr[pos] == requiredNum)
 		{
-			p[occurances] = i;
+			p[occurances] = pos;
 			occurances++;	
 		}	
 	}
 	if(occurances>0)
-	{
 	    printf("The number %d showed at the position of: ", requiredNum);
-        for (int j=0;j<occurances;j++)
+        for (int i=0;i<occurances;i++)
         {
-                printf("%d ",p[j]);
+                printf("%d ",p[i]);
         }
         printf("\n");
 	}
-
+	free(p);
 	return occurances;
 }
 
