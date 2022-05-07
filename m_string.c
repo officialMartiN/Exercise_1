@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "m_string.h"
 
-int CompareArr(int *Arr1,int *Arr2, int numArr)
+int CompareArr(int *Arr1, int *Arr2, int numArr)
 {
-	for(int i=0;i<numArr;i++)
+	for(int i = 0;i < numArr;i++)
 	{
 		if(Arr1[i] != Arr2[i])
 		{
@@ -17,21 +17,23 @@ int CompareArr(int *Arr1,int *Arr2, int numArr)
 void InsertArr(int *Arr, int numArr, int insertNum, int insertPos)
 {
 	int newnumArr = numArr + 1;
-	int *newArr = malloc (newnumArr*sizeof(int));
-	for(int i=newnumArr-1;i>insertPos;i--)
+	int *newArr = malloc (newnumArr * sizeof(int));
+	//Insertion
+	for(int i = 0;i < newnumArr;i++)
 	{
-		newArr[i] = Arr[i-1];
+		if (i < insertPos)
+			newArr[i]= Arr[i];
+		else if (i == insertPos)
+			newArr[insertPos] = insertNum;	
+		else if (i > insertPos)
+			newArr[i] = Arr[i-1];
 	}
-
-	for (int i=0;i<insertPos;i++)
+	//Print out
+	for(int i = 0;i < newnumArr;i++)
 	{
-		newArr[i]= Arr[i];
+		printf("%d ", newArr[i]);
 	}
-	newArr[insertPos] = insertNum;
-	for(int i=0;i<newnumArr;i++)
-	{
-		printf("%d ",newArr[i]);
-	}
+	free(newArr);
 }
 
 /*
