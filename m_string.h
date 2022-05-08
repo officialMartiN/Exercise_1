@@ -2,6 +2,6 @@
 #define _M_STRING_H_
 
 int CompareArr(int *Arr1,int *Arr2, int numArr);
-void InsertArr(int *Arr, int numArr, int insertNum, int insertPos);
+void InsertArr (int *mainArr, int main_numArr, int *insertArr, int insert_numArr, int insertPos);
 
 #endif
